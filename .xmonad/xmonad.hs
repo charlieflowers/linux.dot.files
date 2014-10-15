@@ -18,7 +18,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
     [((m .|. modMask, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) ([xK_1, xK_2, xK_3, xK_4, xK_5, xK_6, xK_7, xK_8, xK_9, xK_0, xK_F1, xK_F2, xK_F3, xK_F4, xK_F5, xK_F6, xK_F7, xK_F8, xK_F9, xK_F10, xK_F11, xK_F12])
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
-    ] 
+    ]
     ++
     [
         ((m .|. modMask, key), screenWorkspace sc
@@ -30,7 +30,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
 
 main = do
     xmonad $ defaultConfig
-        { 
+        {
+          modMask = mod4Mask,
           workspaces = myWorkspaces,
           keys = newKeys
 }
