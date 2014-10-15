@@ -1,2 +1,4 @@
 *
-
+/lein/indicies/*
+.lein/a
+.lein/self-installs/*
